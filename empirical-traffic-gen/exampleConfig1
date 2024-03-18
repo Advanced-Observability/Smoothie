@@ -1,0 +1,5 @@
+server 2002::a00:101 5050
+req_size_dist FB_CDF
+fanout 1 100
+load 0Mbps
+num_reqs 100

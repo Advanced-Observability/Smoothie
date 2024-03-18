@@ -1,0 +1,42 @@
+set_queue_depth 64
+set_queue_rate 100
+table_add tb_int_transit configure_transit => 12 1500
+table_add ipv6_lpm ipv6_forward fe80::0201:0aff:fe00:0c01/128 => 00:01:0a:00:0c:01 1
+table_add ipv4_lpm ipv4_forward 10.0.1.0/24 => 00:01:0a:00:0c:01 1
+table_add ipv6_lpm ipv6_forward 2002::a00:100/120 => 00:01:0a:00:0c:01 1
+table_add ipv6_lpm ipv6_forward fe80::0201:0aff:fe00:0c02/128 => 00:01:0a:00:0c:02 2
+table_add ipv4_lpm ipv4_forward 10.0.2.0/24 => 00:01:0a:00:0c:02 2
+table_add ipv6_lpm ipv6_forward 2002::a00:200/120 => 00:01:0a:00:0c:02 2
+table_add ipv6_lpm ipv6_forward fe80::0201:0aff:fe00:0c03/128 => 00:01:0a:00:0c:03 3
+table_add ipv4_lpm ipv4_forward 10.0.3.0/24 => 00:01:0a:00:0c:03 3
+table_add ipv6_lpm ipv6_forward 2002::a00:300/120 => 00:01:0a:00:0c:03 3
+table_add ipv6_lpm ipv6_forward fe80::0201:0aff:fe00:0c04/128 => 00:01:0a:00:0c:04 4
+table_add ipv4_lpm ipv4_forward 10.0.4.0/24 => 00:01:0a:00:0c:04 4
+table_add ipv6_lpm ipv6_forward 2002::a00:400/120 => 00:01:0a:00:0c:04 4
+table_add ipv6_lpm ipv6_forward fe80::0201:0aff:fe00:0c05/128 => 00:01:0a:00:0c:05 5
+table_add ipv4_lpm ipv4_forward 10.0.5.0/24 => 00:01:0a:00:0c:05 5
+table_add ipv6_lpm ipv6_forward 2002::a00:500/120 => 00:01:0a:00:0c:05 5
+table_add ipv6_lpm ipv6_forward fe80::0201:0aff:fe00:0c06/128 => 00:01:0a:00:0c:06 6
+table_add ipv4_lpm ipv4_forward 10.0.6.0/24 => 00:01:0a:00:0c:06 6
+table_add ipv6_lpm ipv6_forward 2002::a00:600/120 => 00:01:0a:00:0c:06 6
+table_add ipv6_lpm ipv6_forward fe80::0201:0aff:fe00:0c07/128 => 00:01:0a:00:0c:07 7
+table_add ipv4_lpm ipv4_forward 10.0.7.0/24 => 00:01:0a:00:0c:07 7
+table_add ipv6_lpm ipv6_forward 2002::a00:700/120 => 00:01:0a:00:0c:07 7
+table_add ipv6_lpm ipv6_forward fe80::0201:0aff:fe00:0c08/128 => 00:01:0a:00:0c:08 8
+table_add ipv4_lpm ipv4_forward 10.0.8.0/24 => 00:01:0a:00:0c:08 8
+table_add ipv6_lpm ipv6_forward 2002::a00:800/120 => 00:01:0a:00:0c:08 8
+table_add srv6_my_sid srv6_end fe80::0202:0aff:fe00:0c01/128 =>
+table_add srv6_my_sid srv6_end fe80::0202:0aff:fe00:0c02/128 =>
+table_add srv6_my_sid srv6_end fe80::0202:0aff:fe00:0c03/128 =>
+table_add srv6_my_sid srv6_end fe80::0202:0aff:fe00:0c04/128 =>
+table_add srv6_my_sid srv6_end fe80::0202:0aff:fe00:0c05/128 =>
+table_add srv6_my_sid srv6_end fe80::0202:0aff:fe00:0c06/128 =>
+table_add srv6_my_sid srv6_end fe80::0202:0aff:fe00:0c07/128 =>
+table_add srv6_my_sid srv6_end fe80::0202:0aff:fe00:0c08/128 =>
+table_add l2_exact_table drop 33:33:00:00:00:16 =>
+table_add l2_exact_table drop 33:33:00:00:00:02 =>
+table_add l2_exact_table drop 33:33:00:00:00:fb =>
+mc_mgrp_create 1
+mc_node_create 0 1 2 3 4 5 6 7 8 
+mc_node_associate 1 0
+table_add l2_ternary_table set_multicast_group 33:33:00:00:00:00&&&0xFFFF00000000 => 1 0

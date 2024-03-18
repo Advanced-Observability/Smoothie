@@ -1,0 +1,12 @@
+server 2002::a00:102 5050
+server 2002::a00:202 5050
+server 2002::a00:302 5050
+server 2002::a00:402 5050
+server 2002::a00:502 5050
+server 2002::a00:602 5050
+server 2002::a00:702 5050
+server 2002::a00:802 5050
+req_size_dist DCTCP_CDF
+fanout 1 100
+load 0.0Mbps
+num_reqs 1

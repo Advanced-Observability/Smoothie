@@ -1,0 +1,2 @@
+1. modify ipv6 parsing
+2. try catch kill process (net API)

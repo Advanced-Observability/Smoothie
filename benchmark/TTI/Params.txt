@@ -1,0 +1,5 @@
+Based on previous work [2, 20], we rec- ommend twice the network round trip-time as the flowlet gap for effective performance. We propose three schemes with varying path selection techniques for distributing flowlets from the network edge in increasing order of sophistication and performance gain.
+
+[2] Mohammad Alizadeh, Tom Edsall, Sarang Dharmapurikar, Ramanan Vaidyanathan, Kevin Chu, Andy Fingerhut, Francis Matus, Rong Pan, Navindra Yadav, George Varghese, and others. 2014. CONGA: Distributed congestion-aware load balancing for datacenters. ACM SIGCOMM (2014).
+
+[20] SrikanthKandula,DinaKatabi,BruceDavie,andAnnaCharny.2005.Walkingthe Tightrope: Responsive Yet Stable Traffic Engineering. ACM SIGCOMM (2005).

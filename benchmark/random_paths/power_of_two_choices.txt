@@ -1,0 +1,9 @@
+In randomized load balancing, the "power of two choices" refers to the idea of choosing two random paths for each incoming request and forwarding the request to the path with the lowest load. The technique is based on the observation that in many networked systems, the load on different paths can be highly variable, and that by choosing two paths at random, it is more likely that at least one of the paths will be lightly loaded. By forwarding the request to the path with the lowest load, the system can effectively distribute traffic more evenly across the network.
+
+The power of two choices is theoretically established by using randomized algorithms to have expected optimal behavior. The performance of this algorithm can be shown to be asymptotically optimal by analyzing the underlying mathematical properties of the algorithm.
+
+This method can be contrasted with other load balancing techniques, such as round-robin, which may not be as effective in systems where the load on different paths is highly variable. Additionally, while other load balancing techniques, such as shortest-path, tend to choose paths based on fixed criteria such as distance, randomized load balancing's decision is based on the current state of the network which allows it to be more adaptive to changes in the load distribution.
+
+Additionally, By choosing two random paths, the system is less likely to become overloaded on any one path.
+
+It's worth noting that choosing more than 2 choices might increase the chance of finding a less loaded path but it would increase the complexity and the computation cost. Furthermore, the gain in performance from choosing more paths may not be significant enough to justify the increased complexity, overhead, and computation cost. In many cases, the performance improvement from choosing two random paths will be sufficient, and the additional complexity and overhead will not be worth the trade-off.

@@ -1,0 +1,29 @@
+[01m[41m
+Traceback (most recent call last):
+  File "cool2.py", line 69, in <module>
+    NetGraph(spines).select_path(spines*2, detour)
+  File "cool2.py", line 40, in select_path
+    paths = list(generator)
+  File "/usr/local/lib/python3.7/dist-packages/networkx/algorithms/simple_paths.py", line 265, in _all_simple_paths_graph
+    for target in (targets & (set(children) | {child})) - set(visited.keys()):
+MemoryError[0m
+[01m[41m
+Traceback (most recent call last):
+  File "cool2.py", line 69, in <module>
+    NetGraph(spines).select_path(spines*2, detour)
+  File "cool2.py", line 40, in select_path
+    paths = list(generator)
+  File "/usr/local/lib/python3.7/dist-packages/networkx/algorithms/simple_paths.py", line 265, in _all_simple_paths_graph
+    for target in (targets & (set(children) | {child})) - set(visited.keys()):
+MemoryError[0m
+[01m[41m
+Traceback (most recent call last):
+  File "cool2.py", line 69, in <module>
+    NetGraph(spines).select_path(spines*2, detour)
+  File "cool2.py", line 40, in select_path
+    paths = list(generator)
+  File "/usr/local/lib/python3.7/dist-packages/networkx/algorithms/simple_paths.py", line 265, in _all_simple_paths_graph
+    for target in (targets & (set(children) | {child})) - set(visited.keys()):
+MemoryError[0m
+47163.482066585
+52662.676161170995
